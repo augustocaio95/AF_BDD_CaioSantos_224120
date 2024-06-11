@@ -1,24 +1,17 @@
 # AF_BDD_CaioSantos_224120
 
-  Imagine que você está planejando alugar um carro para uma viagem. Para facilitar esse processo, uma empresa de locação de carros desenvolveu um sistema com diferentes comportamentos, dependendo das circunstâncias da locação e do cliente.
+  Este repositório contém um conjunto de especificações para a funcionalidade de saque em um caixa eletrônico, utilizando a linguagem Gherkin para descrever os cenários de teste. As especificações foram elaboradas para serem utilizadas em testes automatizados, garantindo o correto funcionamento da funcionalidade em diferentes cenários.
 
-  Inicialmente, considere um cliente que deseja alugar um carro de luxo. Se esse cliente realizar a reserva com antecedência de pelo menos uma semana, o sistema deve oferecer um desconto especial no valor total da locação. Por outro lado, suponha um cliente que necessita alugar um carro utilitário de última hora, sem qualquer reserva prévia. Nesse caso, o sistema deve ainda ser capaz de encontrar um veículo disponível e processar a locação rapidamente, mesmo que isso implique em um custo um pouco mais elevado devido à demanda urgente.
+Funcionalidade: Cliente faz saque de dinheiro
+Como um cliente, eu gostaria de sacar dinheiro em um caixa eletrônico, para que eu não tenha que esperar em uma fila do banco.
 
-  Esses cenários exemplificam como o sistema de locação de carros responde às diferentes necessidades e condições dos clientes, adaptando-se para garantir uma experiência satisfatória de locação, seja para reservas antecipadas ou demandas de última hora.
-
-
-# Feature: Locação de Carros
-
-    Cenario: Cliente reserva um carro de luxo com antecedência
-    Given que um cliente deseja alugar um carro de luxo
-    And o cliente realiza uma reserva com antecedência de pelo menos uma semana
-    When o cliente confirma a reserva
-    When o sistema deve oferecer um desconto especial no valor total da locação
-
-# Cenario: Cliente aluga um carro utilitário de última hora
-
-    Given que um cliente necessita alugar um carro utilitário de última hora
-    When o cliente busca por um veículo disponível sem reserva prévia
-    Then o sistema deve encontrar um veículo disponível
-    And o sistema deve processar a locação rapidamente
-    And o sistema pode aplicar um custo um pouco mais elevado devido à demanda urgente
+Cenários de Teste:
+Cenário 1: Cliente especial com saldo negativo
+Dado: Um cliente especial com saldo atual de -200 reais
+Quando: for solicitado um saque no valor de 100 reais
+Então: deve efetuar o saque e atualizar o saldo da conta para -300 reais
+E: verificar mais resultados
+Cenário 2: Cliente comum com saldo negativo
+Dado: Um cliente comum com saldo atual de -200 reais
+Quando: Solicitar um saque de 200 reais
+Então: não deve efetuar o saque e deve retornar a mensagem "Saldo Insuficiente"
