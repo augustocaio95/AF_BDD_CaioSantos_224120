@@ -16,3 +16,10 @@ Como um cliente, eu gostaria de sacar dinheiro em um caixa eletrônico, para que
     Given Um cliente comum com saldo atual de -200 reais
     When Solicitar um saque de 200 reais
     Then não deve efetuar o saque e deve retornar a mensagem Saldo Insuficiente
+# Primeiros resultados testando a classe "arquivos_teste.feature"
+
+![image](https://github.com/augustocaio95/AF_BDD_CaioSantos_224120/assets/124223509/28e8a964-cb7a-4c17-a454-c7b8c374ba07)
+
+# Segundo resultado testando a classe "Conta" com o que foi recomendado pelo cucumber
+
+![image](https://github.com/augustocaio95/AF_BDD_CaioSantos_224120/assets/124223509/4cfebd73-2308-4d8e-b14e-c5e826eb7403)
